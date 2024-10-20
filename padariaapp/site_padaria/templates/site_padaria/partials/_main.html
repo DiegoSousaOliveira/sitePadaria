@@ -1,0 +1,176 @@
+{% load static %}
+
+<main class='main'>
+    <!-- Page home -->
+    <div id='home' class="home">
+        <div class="card">
+            <div class="description">
+                <h2>Bem-vindo à <span>Pão & Prosa</span>: Onde Cada Escolha Conta uma História</h2><br>
+                <p>
+                    Na <span>Pão & Prosa</span>, acreditamos que cada compra é mais do que apenas adquirir um produto — é 
+                    uma forma de expressar sua identidade, criar memórias e transformar o comum em algo especial. 
+                    Nosso objetivo é oferecer a você não apenas uma loja, mas uma experiência única, repleta de 
+                    inspiração, qualidade e inovação.
+                </p><br>
+
+                <p>
+                    Aqui, cada item foi cuidadosamente selecionado pensando 
+                    em você. Queremos que, ao explorar nossas categorias, você se sinta envolvido por uma jornada 
+                    que mistura estilo, funcionalidade e conforto. Desde produtos para o seu lar, até acessórios 
+                    que complementam o seu dia a dia, nosso catálogo é pensado para atender às suas necessidades 
+                    com elegância e praticidade.
+                </p><br>
+
+                <p>
+                    Seja para encontrar aquele detalhe que faltava na decoração de sua casa, renovar seu guarda-roupa 
+                    com peças que traduzem sua personalidade, ou descobrir um presente perfeito para alguém especial, 
+                    estamos aqui para tornar suas compras uma experiência prazerosa e sem complicações. Nossa loja online 
+                    é intuitiva e acessível, permitindo que você navegue com facilidade por todas as nossas coleções e 
+                    encontre exatamente o que procura — e, quem sabe, até descobrir algo que você nem sabia que precisava!
+                </p><br>
+
+                <p>
+                    Valorizamos a satisfação e o bem-estar de nossos clientes acima de tudo. Por isso, nos empenhamos em 
+                    oferecer produtos de alta qualidade, com garantia de durabilidade e design impecável. Cada detalhe 
+                    importa para nós, desde a escolha dos fornecedores até o cuidado com a embalagem que chega até sua 
+                    porta. Estamos comprometidos com a sustentabilidade, priorizando práticas que respeitam o meio ambiente
+                    e ajudam a construir um futuro melhor para todos.
+                </p><br>
+                    
+                <p>
+                    Na <span>Pão & Prosa</span>, acreditamos que o ato de comprar deve ser uma experiência especial, que desperta 
+                    emoções e transforma o cotidiano em algo mais. Convidamos você a explorar nosso universo, cheio de 
+                    possibilidades, e encontrar os itens que vão fazer parte da sua história.
+                </p><br>
+                    
+                <p>
+                    Obrigado por confiar em nós. Aqui, estamos prontos para tornar cada escolha sua ainda mais 
+                    significativa.
+                </p>
+                
+            </div>
+
+            <img src='{% static "./img/frente_padaria.jpeg" %}' alt="Imagem da frente da padaria">
+        </div>
+    </div>
+
+    <!-- Page Menu -->
+    <div id='menu' class="menu">
+        <section>
+            <h1>Cardápio</h1>
+
+            <div class="menu-food">
+                <section>
+                    <img src='{% static "./img/prato_de_comida_sem_fundo.png" %}' alt=''></img>
+                    <h2>Comidas</h2>
+                </section>
+                
+                <ul>
+                    {% for food in foods %}
+                        <li>
+                            <span>{{ food.name }}</span>
+                            <span>{{ food.value }}</span>
+                        </li> 
+                    {% endfor %}
+                    
+                    
+                </ul>
+            </div>
+
+            <div class="divider">X</div>
+
+            <div class="menu-drinks">
+                <section>
+                    <img src='{% static "./img/coco_Cola_sem_fundo.png" %}' alt=''></img>
+                    <h2>Bebidas</h2>
+                </section>
+                <ul>
+                    {% for drink in drinks %}
+                        <li>
+                            <span>{{ drink.name }}</span>
+                            <span>{{ drink.value }}</span>
+                        </li> 
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Foot -->
+    <div id='food' class="food">
+        <section class="carrossel">
+            <button class="prev">&#10094;</button>
+            <div class="cards">
+                
+            </div>
+            <button class="next">&#10095;</button>
+        </section>
+    </div>
+
+    <!-- Page drinks -->
+    <div id='drinks' class="drinks">
+        <section class="carrossel">
+            <button class="prev">&#10094;</button>
+            <div class="cards">
+
+            </div>
+            <button class="next">&#10095;</button>
+        </section>
+    </div>
+
+    <!-- Page about -->
+    <div id='about' class='about'>
+        <section class="description">
+            <div class="image">
+                <img src="{% static './img/dentro_padaria.jpg' %}" alt="Imagem da Padaria">
+                <div class="caption">
+                    <p>Local: <span class="address">Rua do Trigo, 123, Vila dos Sabores, Campos do Vale, CEP: 12345-678.</span></p>
+                    <p>Data: <span class="date">18/10/2024</span></p>
+                </div>
+            </div>
+            
+            <div class="text">
+                <section>
+                    <h1 class="title"> A Tradição e o Sabor da <span>Pão & Prosa</span></h1>
+                    
+                    <p>
+                        Na <span>Pão & Prosa</span>, cada receita conta uma história de dedicação, 
+                        carinho e amor pela arte de fazer pão. Somos mais do que uma 
+                        padaria — somos um ponto de encontro onde tradição e sabor se
+                        misturam para criar momentos únicos no seu dia a dia.
+                    </p><br>
+
+                    <p>
+                        Desde o cheiro irresistível do pão fresquinho saindo do forno 
+                        até a textura macia e crocante de cada fatia, nossa missão é 
+                        trazer o melhor da panificação artesanal para sua mesa. Utilizamos 
+                        ingredientes selecionados e processos tradicionais que garantem a 
+                        qualidade e o frescor de todos os nossos produtos.                    
+                    </p><br>
+
+                    <p>
+                        Aqui, além de pães artesanais, você encontra doces caseiros, bolos 
+                        e uma variedade de lanches preparados com aquele toque caseiro que 
+                        você tanto ama. Tudo isso em um ambiente acolhedor, perfeito para 
+                        uma pausa saborosa ou uma conversa descontraída — porque acreditamos 
+                        que o pão combina perfeitamente com uma boa prosa.                    
+                    </p><br>
+
+                    <p>
+                        Nossa equipe é formada por pessoas apaixonadas pelo que fazem, que cuidam 
+                        de cada detalhe com o compromisso de oferecer a você a melhor experiência. 
+                        Seja para começar bem o dia, compartilhar momentos com amigos ou apenas 
+                        saborear algo especial, a <span>Pão & Prosa</span> está sempre pronta para receber 
+                        você de braços abertos.    
+                    <p><br>
+                    
+                    <p>
+                        Venha nos visitar e descubra como é possível sentir o carinho em cada pedaço!
+                    </p>
+                </section>
+            </div>
+            
+        </section>
+    </div>
+    <script src='{% static "js/paginations.js" %}'></script>
+</main>

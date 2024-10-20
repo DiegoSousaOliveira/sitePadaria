@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static './css/variable.css' %}">
+    <link rel="stylesheet" href="{% static './css/config_style_site.css' %}">
+    <link rel="stylesheet" href="{% static "./css/cadastre.css" %}">
+</head>
+
+<body>
+    <header>
+        <a href="{% url "site_padaria:home" %}" class="voltar-button">← Voltar para a Página Principal</a>
+    </header>
+
+    <div class="container">
+        <h2>Cadastro de Produtos</h2>
+        <form action="#" method="post" enctype="multipart/form-data"> {% csrf_token %}
+            {% if form.errors %}
+                <div class="erro-campo">
+                    <ul>
+                        {% for error in form.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <label for="name">Nome do Produto:</label>
+            {{form.name}}
+
+            {% if form.name.errors %}
+                <div class="erro-campo">
+                    <ul>
+                        {% for error in form.name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <label for="type_product">Tipo de Produto:</label>
+            {{form.type_product}}
+
+            {% if form.type_product.errors %}
+                <div class="erro-campo">
+                    <ul>
+                        {% for error in form.type_product.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <label for="value">Valor do Produto (R$):</label>
+            {{form.value}}
+
+            {% if form.value.errors %}
+                <div class="erro-campo">
+                    <ul>
+                        {% for error in form.value.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <label for="imagem">Adicionar Foto do Produto:</label>
+            {{form.imagem}}
+
+            {% if form.imagem.errors %}
+                <div class="erro-campo">
+                    <ul>
+                        {% for error in form.imagem.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <button type="submit">Cadastrar Produto</button>
+        </form>
+    </div>
+
+    {% if messages %}
+        <div class="mensagens">
+            {% for message in messages %}
+                <div class="mensagem {% if message.tags %}mensagem-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</body>
+</html>

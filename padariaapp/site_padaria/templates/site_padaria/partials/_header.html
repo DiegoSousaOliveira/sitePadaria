@@ -1,0 +1,24 @@
+{% load static %}
+
+<header class="header">
+    <section>
+        <div class='containerLogo'>
+            <a href='#home'>
+                <img class="logo" src="{% static './img/Ginyard.png' %}" alt="logo do site">
+            </a>
+            
+        </div>
+
+        <nav class="navBar">
+            <ul class="menu-option">
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#food">Comidas</a></li>
+                <li><a href="#drinks">Bebidas</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="{% url "site_padaria:cadastre" %}">Cadastrar Produto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">☰</button>
+    </section>
+
+</header>

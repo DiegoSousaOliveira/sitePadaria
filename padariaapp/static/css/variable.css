@@ -1,0 +1,17 @@
+:root {
+    --main-color:   #d3ad7f;
+    --color-black:  #13131a;
+    --color-white:  #fff;
+    --color-orange: #F78A00;
+    --color-blue:   #007bff;
+    --color-blue-black: #0762c4;
+    --color-green: #28a745;
+    --color-green-black: #218838;
+    --color-grey: #555;
+    --color-grey-black: #333;
+    --bg: #0C181C;
+    --bg-black: #000000;
+    --border: 0.1rem solid rgb(245, 245, 245, 0.3);
+    --bd-grey: 0.1rem solid rgb(204, 204, 204);
+    --color-black-50: rgba(0, 0, 0, 0.5);
+}
